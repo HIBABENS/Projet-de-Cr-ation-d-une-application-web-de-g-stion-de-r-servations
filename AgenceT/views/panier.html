@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{$titre}</title>
+  <link rel="stylesheet"  href="/AgenceT/css/panier.css">
+  {include file='header.html'}
+  {include file='navbar.html'}
+
+<!--{foreach item=object from=$tpl.session.act_valeurs}
+{$object->getData()}
+{/foreach}-->
+
+<main>
+  <br>
+  <br>
+  <br>
+
+  <div class="container my-5">
+  
+  <!--Section: Content-->
+  <section class="dark-grey-text">
+
+    <!-- Section heading -->
+    <h1 class="text-center font-weight-bold mb-5">Panier</h1>
+  <!-- Grid row -->
+    <div class="row">
+      {foreach $ses_valeurs item=act}
+      <div class="col-12 mb-4">
+        <div class="card z-depth-0 bordered border-light">
+          <div class="card-body p-0">
+            <div class="row mx-0">
+              <div class="col-md-8 grey lighten-4 rounded-left pt-4">
+             
+                <div class="container">
+                <img class="img" src="{$act.img}">
+                <aside class="sidbar">
+                <h5 class="font-weight-bold">{$act.act_nom}</h5><br/>
+                <p class="font-weight-light text-muted mb-4"><h6>Date : {$act.date}</h6></p>
+                <p class="font-weight-light text-muted mb-4"><h6>Prix : ({$act.act_prix} x {$act.nbrAdultes}ADULTES) + ({$act.act_prix} x {$act.nbrEnfants}ENFANTS x 50%)</h6></p>
+                </aside>
+                <div class="fix"></div>
+                </div>
+              </div>
+
+              <form method="post" action="/AgenceT/panier.php">
+                <input type="hidden"  name="nom" value="{$act.act_nom}">
+              <div class="side">
+                <p class="h1 font-weight-normal">Prix</p>
+                <p class="h5 font-weight-light text-muted mb-4">{$act.montant} Dhs</p>
+                 <input type="hidden"  name="actMontant" value="{$act.montant}">
+
+<div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">RETIRER</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <h1>Voulez vous vraiment retirer l'activité "{$act.act_nom}" du panier?</h1>
+          <input type="hidden"  name="nom" value="{$act.act_nom}">
+        </div>
+
+
+      </div>
+      <div class="modal-footer d-flex ">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">NON</button>
+        <button name="retirer" class="btn btn-indigo">OUI</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalSubscriptionForm">Retirer du panier</a>
+</div>
+
+             
+              </form>
+
+
+<aside>
+
+              <form method="post" action="/AgenceT/panier.php">
+                <input type="hidden"  name="nom" value="{$act.act_nom}">
+             
+
+                  <div class="modal fade" id="modifier" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+
+                        <div class="modal-header text-center">
+                          <h4 class="modal-title w-100 font-weight-bold">Modifier</h4>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+
+                        <div class="modal-body mx-3">
+                          <div class="md-form mb-5 text-center">
+                            
+                                    Date:
+                              <input type="date" id="date" name="date" min="2020-06-01" max="2020-12-31" required>
+                              <span class="validity"></span>
+                              <input type="hidden"  name="nom" value="{$act.date}">
+                              
+                              
+                              <input type="hidden"  name="prix" value="{$act.act_prix}"><br><br>
+
+                                Nombre d'enfants: 
+                              <select name="enf" class="mdb-select md-form colorful-select dropdown-primary" required> 
+                                  {for $foo=1 to 20}
+                               <option>{$foo}</option>
+                                   {/for}
+                              </select><br>
+
+                                Nombre d'adultes: 
+                              <select name="adte" class="mdb-select md-form colorful-select dropdown-primary" required> 
+                                  {for $foo=1 to 20}
+                               <option>{$foo}</option>
+                                   {/for}
+                              </select><br>
+
+                              <input type="hidden"  name="nom" value="{$act.act_nom}">
+                          </div>
+                        </div>
+
+                        <div class="modal-footer d-flex ">
+                          <button name="modifer" class="btn btn-indigo">Modifier</button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="text-center">
+                    <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modifier">Modifier</a>
+                  </div>
+
+             
+              </form>
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+      {/foreach}
+
+<form method="post" action="panier.php">
+      <div class="col-12 mb-4">
+        <div class="card z-depth-0 bordered border-light">
+          <div class="card-body p-0">
+            <div class="row mx-0">
+              <div class="col-md-8 grey lighten-4 rounded-left pt-4">
+                <div class="container">
+                <h1>TOTAL : </h1><br>
+                <p class="h1 font-weight-normal">{$varG} Dhs</p>
+                </div>
+           
+
+ <input type="hidden"  name="nom" value="{$varG}">
+
+ <button name="Valider" class="btn aqua-gradient btnC">Valider mon panier</button>
+</form>
+
+
+
+
+                
+            </div>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <!-- Grid row -->
+
+  
+  </section>
+  <!--Section: Content-->
+
+
+</div>
+
+
+  </main>
+<!--Main layout-->
+
+{include file='footer.html'}
+
+
+</body>
+</html>

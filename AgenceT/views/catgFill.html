@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{$titre}</title>
+  <link rel="stylesheet"  href="/AgenceT/css/styleCatgFill.css">
+	{include file='header.html'}
+	{include file='navbar.html'}
+
+
+<main class="mt-5 rgba(121, 85, 72, 0.1) rgba-brown-slight z-depth-1 my-5 p-5" >
+
+{$counter = 0}
+{$counter0 = 0}
+  
+<h1 class="font-weight-bold text-center dark-grey-text pb-2">{$catg_name}</h1>
+  <hr class="w-header my-4">
+ 
+
+<div class="row row-cols-1 row-cols-md-2">
+   {foreach $act_noms item=act}
+
+ <div class="column col mb-4 ">
+     <div class="card h-100">
+    <!-- Card -->
+
+      <!--Card image-->
+        <img class="card-img-top " src="{$act.act_img}"
+          alt="Card image cap">
+
+    <form action="ajouter_panier.php" method="post">
+      <!--Card content-->
+      <div class="card-body">
+        <div class="titre-content">
+        <!--Title-->
+        <div class="main-titre"><h4 class="card-title nom">{$act.act_nom}</h4><br></div>
+
+        <aside class="sidbar"><h5 class="prix">A partir de  <strong><h3 class="text-info">{$act.act_prix} Dhs</h3></strong></h5><br/></aside>
+
+        <div class="fix"></div>
+        </div>
+         <!--Text-->
+
+        <div class="content">
+         <div class="main"><p class="location card-text"><i class="fas fa-1x fa-map-marker-alt"></i>  <strong>{$act.act_location}</strong></p></div>
+        
+        <aside class="btn1"><button type="submit" class="btn btn-light-blue btn-rounded">Voir plus</button></aside>
+        <div class="fix"></div>
+        <input type="hidden"  name="id_act" value="{$act.id_act}"></div>
+      </div>
+       <!-- Card -->
+    </form>
+  </div>
+  </div>
+
+{/foreach}
+
+</div>
+  </main>
+
+{include file='footer.html'}
+
+</body>
+</html>

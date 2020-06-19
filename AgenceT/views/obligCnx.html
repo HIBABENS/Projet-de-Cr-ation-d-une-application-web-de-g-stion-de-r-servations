@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{$titre}</title>
+  <link rel="stylesheet"  href="/AgenceT/css/panier.css">
+  {include file='header.html'}
+  {include file='navbar.html'}
+
+  <br>
+  <br>
+  <br>
+
+  <div class="container my-5">
+  
+  <!--Section: Content-->
+  <section class="dark-grey-text">
+
+    <!-- Section heading -->
+    <h1 class="text-center font-weight-bold mb-5">ATTENTION !</h1>
+
+ <div class="row">
+ <div class="col-12 mb-4">
+        <div class="card z-depth-0 bordered border-light">
+          <div class="card-body p-0">
+            <div class="row mx-0">
+              <div class="col-md-12 grey lighten-4 rounded-left pt-4 ">
+                <div class="contVide text-center">
+                  
+                  <form method="post" action="/AgenceT/client.php">
+                      <div class="vide">
+                      <h1>Vous devez d'abord vous connecter !</h1> <br>
+                      <h2>Connectez vous en appuyant sur l'icon  <i class="fas fa-user"></i> en haut puis sur Connection.</h2>
+                      <h2>Si vous n'avez pas un compte chez nous veillez vous inscrir d'abord.</h2>
+                      <br>
+                      <br>
+
+                      </div>
+                      <aside class="btnCT">
+
+    
+                       <p>
+                        <a href="/AgenceT/accueil.php" class="btn aqua-gradient">Revenir</a>
+                        </p>
+                       </aside>
+                       <div class="fixe"></div>
+                  </form>
+
+                </div>
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  <!--Section: Content-->
+
+
+</div>
+
+{include file='footer.html'}
+
+
+</body>
+</html>

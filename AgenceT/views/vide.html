@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{$titre}</title>
+  <link rel="stylesheet"  href="/AgenceT/css/panier.css">
+  {include file='header.html'}
+  {include file='navbar.html'}
+
+  <br>
+  <br>
+  <br>
+
+  <div class="container my-5">
+  
+  <!--Section: Content-->
+  <section class="dark-grey-text">
+
+    <!-- Section heading -->
+    <h1 class="text-center font-weight-bold mb-5">Panier</h1>
+
+ <div class="row">
+ <div class="col-12 mb-4">
+        <div class="card z-depth-0 bordered border-light">
+          <div class="card-body p-0">
+            <div class="row mx-0">
+              <div class="col-md-12 grey lighten-4 rounded-left pt-4 ">
+                <div class="contVide text-center">
+                  
+                  <form method="post" action="/AgenceT/excursion.php?idCatg=1">
+                      <div class="vide">
+                      <h1>VOTRE PANIER EST VIDE !</h1>
+                      <br>
+                      <br>
+
+                      </div>
+                      <aside class="btnCT">
+                       <p><button name="continuer" class="  btn aqua-gradient">Continuer sur le site</button></p>
+                       </aside>
+                       <div class="fixe"></div>
+                  </form>
+
+                </div>
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  <!--Section: Content-->
+
+
+</div>
+
+{include file='footer.html'}
+
+
+</body>
+</html>

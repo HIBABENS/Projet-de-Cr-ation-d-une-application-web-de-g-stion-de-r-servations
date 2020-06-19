@@ -1,0 +1,54 @@
+.sidbar{
+	width: 60%;
+	float: left;
+	font-size: 85%;
+	padding: 0px 0px 0px 0px;
+	text-align: center;
+	box-sizing: border-box;
+}
+img{
+	width: 40%;
+	height: 200px;
+}
+.img{
+	width: 40%;
+	float: left;
+	padding: 0px 0px 20px 0px;
+	text-align: center;
+	box-sizing: border-box;
+}
+.side{
+		float: right;
+	padding: 10px 20px 20px 20px;
+	text-align: center;
+	box-sizing: border-box;
+}
+.btnCT{
+	width: 40%;
+	float: right;
+	font-size: 85%;
+	padding: 0px 0px 0px 0px;
+	text-align: center;
+	box-sizing: border-box;
+}
+.retr{
+	width: 60%;
+	float: left;
+	font-size: 85%;
+	padding: 0px 0px 0px 0px;
+	text-align: center;
+	box-sizing: border-box;
+}
+.vide{
+	width: 80%;
+	float: left;
+	font-size: 85%;
+	padding: 0px 0px 0px 0px;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.fix{
+	clear: both;
+}
+

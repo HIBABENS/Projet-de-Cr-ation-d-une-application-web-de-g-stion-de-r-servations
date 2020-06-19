@@ -1,0 +1,38 @@
+.nom{
+	width: 66%;
+	float: left;
+	padding: 20px 40px 0px 0px;
+	text-align: center;
+	box-sizing: border-box;
+}
+.sidbar{
+	width: 34%;
+	float: left;
+	font-size: 85%;
+	padding: 0px 10px 20px 40px;
+	text-align: center;
+	box-sizing: border-box;
+}
+img{
+	width: 50%;
+	height: 300px;
+}
+.btn1{
+	width: 40%;
+	float: right;
+	font-size: 85%;
+	padding: 20px 10px 20px 40px;
+	text-align: center;
+	box-sizing: border-box;
+}
+.main{
+	width: 60%;
+	float: left;
+	font-size: 85%;
+	padding: 20px 10px 20px 40px;
+	text-align: center;
+	box-sizing: border-box;
+}
+.fix{
+	clear: both;
+}
